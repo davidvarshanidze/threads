@@ -1,0 +1,7 @@
+A race condition happens when two or more threads access the same variable at the same time, leading to unexpected behavior.
+This causes data corruption, meaning the variable holds the wrong or inconsistent value.
+
+🔴 Race Condition	                                                🟢 Fixed with Mutex
+Multiple threads access & modify a variable at the same time	    std::mutex prevents simultaneous access
+Unpredictable results	                                            Always correct behavior
+Data corruption (wrong value)	                                    Data safety (right value)

@@ -1,0 +1,11 @@
+<threads> C++11
+
+C++11	std::thread, std::mutex, std::lock_guard, std::unique_lock, std::condition_variable, std::future, std::async, std::atomic
+C++14	Minor improvements (e.g., std::shared_timed_mutex)
+C++17	std::scoped_lock (automatic multi-locking), std::hardware_concurrency() improvements
+C++20	std::jthread (auto-joining threads), std::stop_token (thread cancellation), better synchronization primitives
+C++23	std::barrier, std::latch (better thread coordination)
+
+What they are: A thread is an independent path of execution within a program. Think of it as a separate worker that can perform tasks simultaneously with other workers
+
+Creating threads: You can create threads using std::thread, passing a function (or a function-like object) that the thread will execute
