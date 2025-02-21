@@ -9,3 +9,25 @@ C++23	std::barrier, std::latch (better thread coordination)
 What they are: A thread is an independent path of execution within a program. Think of it as a separate worker that can perform tasks simultaneously with other workers
 
 Creating threads: You can create threads using std::thread, passing a function (or a function-like object) that the thread will execute
+Joining threads: The join() function waits for a thread to complete its execution before the main program continues. It's like waiting for a worker to finish their task before moving on.
+
+Mutexes:
+
+A mutex (mutual exclusion) is a locking mechanism that prevents multiple threads from accessing a shared resource simultaneously.
+When multiple threads access the same data, it can lead to race conditions where the outcome depends on the unpredictable order of execution, potentially corrupting data.
+A mutex acts like a gatekeeper. Before accessing a shared resource, a thread must lock the mutex. Once the thread is finished, it unlocks the mutex, allowing another thread to access the resource.
+
+Futures:
+
+A std::future provides a way to access the result of an asynchronous operation (like a thread) once it becomes available.
+You launch a task asynchronously using std::async, which returns a std::future object. You can then use the future to retrieve the result of the task when it's finished.
+
+Promises:
+
+Closely related to futures, promises provide a way to set the value of a future.
+One thread can use a promise to provide a value to another thread that is waiting on the corresponding future.
+
+In summary, multithreading allows concurrent execution of code.
+Threads are created using std::thread.
+Mutexes (std::mutex) prevent race conditions by controlling access to shared resources.
+Futures (std::future) provide a mechanism to retrieve results from asynchronous tasks.
